@@ -58,11 +58,11 @@ def leibniz_formula(num):
 
 if __name__ == "__main__":
     print("Monte Carlo Method Estimated Pi:")
-    monte_carlo_method(100)
-    monte_carlo_method(10000)
-    monte_carlo_method(1000000)
+    monte_carlo_method(10**2)
+    monte_carlo_method(10**4)
+    monte_carlo_method(10**6)
 
     print("\nLeibniz Formula for Pi:")
-    leibniz_formula(100)
-    leibniz_formula(10000)
-    leibniz_formula(1000000)
+    leibniz_formula(10**2)
+    leibniz_formula(10**4)
+    leibniz_formula(10**6)
