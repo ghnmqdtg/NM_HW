@@ -13,9 +13,6 @@ def back_to_origin(limit, attempts):
         for i in range(limit):
             steps.append(random.choice(directions))
 
-        # steps = sorted(steps)  # sort the list of steps
-        # print(steps)
-
         # count duplicates
         count_A = steps.count("A")
         count_B = steps.count("B")
@@ -31,7 +28,9 @@ def back_to_origin(limit, attempts):
 
         steps.clear()
 
-    print(occurrences / attempts)
+    probability = occurrences / attempts
+
+    print(probability)
 
 
 if __name__ == "__main__":
