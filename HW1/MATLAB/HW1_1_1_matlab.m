@@ -1,3 +1,4 @@
+% Use Monte Carlo Method to Estimate Pi
 clear all
 close all
 format long
@@ -13,6 +14,7 @@ circle_points = sum(x.^2 + y.^2 < 1);
 pi = 4*circle_points/num
 toc
 
+circle_points = 0;
 % The following takes 0.47s to compute
 tic
 for i = 1:num

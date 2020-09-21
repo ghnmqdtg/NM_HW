@@ -1,3 +1,5 @@
+% Cut one line into three pieces
+% Probability that three pieces Form a triangle
 clear all
 close all
 format long
