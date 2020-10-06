@@ -2,16 +2,17 @@ clear all
 close all
 format long
 
-% the border of start and end
+% the border of the start and the end
 border_left = 1; border_right = 29;
 
-% column indexs for the buildings
+% set column indexs for buildings
 % in matlab, indexs start from 1
 left = 1; height = 2; right = 3;
 
 % coordinates of all buildings
 buildings = [
 %	 L  H  R;
+% 	 1  2  3;
 	 1 11  5;
 	 2  6  7;
 	 3 13  9;
@@ -26,10 +27,11 @@ buildings = [
 % initialize height of skyline with zeros
 y = linspace(0, 0, border_right - border_left + 1)
 
-% scan from the first building to the last
+% scan from the first building to the last one
 for i = 1:length(buildings)
-	% 
+	% minus 1 for avoiding count one more
 	for x = buildings(i, left):(buildings(i, right) - 1)
+		% choose the highest one as the final height
 		if buildings(i, height) > y(x)
 			y(x) = buildings(i, height)
 		end
@@ -40,4 +42,5 @@ end
 % [x_min x_max y_min y_max]
 axis([border_left-1 border_right+1 0 20])
 hold on;
+% plot the figure
 stairs(border_left-1:1:border_right, [0 y]);
