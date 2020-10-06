@@ -34,4 +34,4 @@ def back_to_origin(limit, attempts):
 
 
 if __name__ == "__main__":
-    back_to_origin(4, 10000)
+    back_to_origin(4, 10**7)

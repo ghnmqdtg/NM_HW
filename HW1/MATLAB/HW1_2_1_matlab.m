@@ -15,6 +15,7 @@ occurrences = sum(x + y > z & y + z > x & z + x > y);
 probability = occurrences / num
 toc
 
+occurrences = 0;
 % The following takes 7.2s to compute
 tic
 for i = 1:num
