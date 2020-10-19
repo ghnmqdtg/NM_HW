@@ -10,7 +10,7 @@ error = [];
 
 n = 1:10;
 for i = n
-	T = taylor(f, x, 'Order', 2*i);
+	T = taylor(f, x, 'Order', 2*i)
     error_func = f - T;
     % substitute 1
     error_value = subs(error_func, 1);
