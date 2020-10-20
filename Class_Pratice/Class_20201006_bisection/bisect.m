@@ -23,6 +23,6 @@ function [root, ea, iter] = bisect(func, xl, xu, es, maxit, varargin)
 			ea = 0;
 		end
 		if ea <= es || iter >= maxit, break, end
-end
+	end
 
 root = xr;

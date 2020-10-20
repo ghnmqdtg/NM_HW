@@ -1,0 +1,25 @@
+clear all
+close all
+format long
+syms x
+
+func = 9 * exp(-x) * sin(2 * pi * x) - 3.5
+
+% lower bound
+xl = 0;
+% upper bound
+xu = 2;
+% initial value
+fx_min = 0
+
+x_position = xl;
+
+while x_position <= xu
+    fx_next = subs(func, x_position);
+    if fx_next < fx_min
+        fx_min = fx_next;
+    end
+    x_position = x_position + 0.001;
+end
+
+fx_min
