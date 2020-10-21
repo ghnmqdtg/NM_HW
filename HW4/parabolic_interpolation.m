@@ -10,5 +10,12 @@ function [x4] = parabolic_interpolation(func, iter, x1, x2, x3)
             x1 = x2;
             x2 = x4;
         end
+<<<<<<< HEAD
         [x4, x1, x2, x3];
     end
+=======
+        [x4, x1, x2, x3]
+    end
+
+% 剛開始的時候交換變數換錯，用x4取代x3，他就一直接近x2
+>>>>>>> origin/master

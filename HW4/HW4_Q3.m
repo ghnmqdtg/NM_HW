@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     clear all
     close all
     format long
@@ -21,3 +22,17 @@
 
     [x_max_newton, ea, iter] = newton_method(@(x, varargin) diff_func(x), x2, es, maxit, varargin)
     fmax_newton = func(x_max_newton)
+=======
+clear all
+close all
+format long
+syms x
+
+func = ;
+
+% lower bound
+xl = 0;
+% upper bound
+xu = 2;
+% initial value
+>>>>>>> origin/master
