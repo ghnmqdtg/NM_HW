@@ -11,7 +11,7 @@ tic
 x = rand(1, num) * 2 - 1;
 y = rand(1, num) * 2 - 1;
 circle_points = sum(x.^2 + y.^2 < 1);
-pi = 4*circle_points/num
+pi = 4 * circle_points / num
 toc
 
 circle_points = 0;
@@ -24,5 +24,5 @@ for i = 1:num
 		circle_points = circle_points + 1;
     end
 end
-pi = 4*circle_points/num
+pi = 4 * circle_points / num
 toc

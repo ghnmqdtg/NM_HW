@@ -17,10 +17,7 @@ fx_max = -100;
 
 x_position = xl;
 
-<<<<<<< HEAD
 tic
-=======
->>>>>>> origin/master
 while x_position <= xu
     fx_next = subs(func, x_position); 
     % looking for the minimum
@@ -35,10 +32,7 @@ while x_position <= xu
     end
     x_position = x_position + 0.0001;
 end
-<<<<<<< HEAD
 toc
-=======
->>>>>>> origin/master
 
 x_min
 fx_min = vpa(subs(func, x_min))

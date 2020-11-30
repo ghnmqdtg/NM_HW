@@ -5,10 +5,6 @@ format long
 % grid on;
 
 func = @(x, varargin) 9 * exp(-x) * sin(2 * pi * x) - 3.5;
-<<<<<<< HEAD
-% to calculate the maximum value with the same function
-=======
->>>>>>> origin/master
 flipped_func = @(x, varargin) - 1 * (9 * exp(-x) * sin(2 * pi * x) - 3.5);
 
 % lower bound
