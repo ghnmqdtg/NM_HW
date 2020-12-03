@@ -20,20 +20,14 @@ lambda = diag(lambda);
 
 T = 1./(sqrt(lambda)/2/pi);
 
-t = 0 : 0.1 : 20;
+t = 0 : 0.1 : 50;
 
-figure(1);
-% subplot(m,n,p)
-% divides the figure into an m-by-n grid and creates axes in the position specified by p
-subplot(1, 2, 1)
-plot(t, cos(2 * pi / T(1, :) * t) * v(1, 1)/v(1, 1));
-subplot(1, 2, 2)
-plot(t, cos(2 * pi / T(1, :) * t) * v(2, 1)/v(1, 1));
-
-figure(2);
-% subplot(m,n,p)
-% divides the figure into an m-by-n grid and creates axes in the position specified by p
-subplot(1, 2, 1)
-plot(t, cos(2 * pi / T(2, :) * t) * v(1, 2)/v(2, 2));
-subplot(1, 2, 2)
-plot(t, cos(2 * pi / T(2, :) * t) * v(2, 2)/v(2, 2));
+for i = 1:2
+     figure(i);
+     hold on;
+     title("w^2 = " + num2str(lambda(i)));
+     plot(t, sin(2 * pi / T(i, :) * t) * v(1, i)/v(i, i));
+     plot(t, sin(2 * pi / T(i, :) * t) * v(2, i)/v(i, i));
+     legend('mass1', 'mass2', 'location', 'best');
+     xlabel('t (time)'); ylabel('x (displacement)');
+end
