@@ -15,3 +15,11 @@ partial_diff = subs([diff(func, x) diff(func, y)], [x, y], coordinate);
 
 % Directional derivative (in decimal form)
 Ans = vpa(dot(partial_diff, direction));
+
+[X,Y] = meshgrid(-2:.25:5);
+Z = 2 * X.^2 + Y.^2;
+figure
+mesh(X, Y, real(Z));
+xlabel('x coordinate');
+ylabel('y coordinate');
+zlabel('Z');
