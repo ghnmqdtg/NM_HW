@@ -15,11 +15,9 @@ plot(X, Y, 'o');
 
 x = -1 : 0.01 : 1;
 plot(x, func(x));
-plot(x, Lagrange(X, Y, x))
-
 % Config of figure
 title('Runge’s function');
 ylim([-0.6 1.2])
 xlabel('x coordinate')
 ylabel('y coordinate')
-legend('Given Data', 'Runge’s function', 'Estimated 4-Order Polynomial', 'location', 'best');
+legend('Given Data', 'Runge’s function', 'location', 'best');

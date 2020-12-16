@@ -71,6 +71,8 @@ plot(x_tmp, y_tmp);
 
 % Config of figure
 title('Not-a-knot Spline');
+xlim([-0.5 7.5])
+ylim([-1.5 1.5])
 xlabel('x coordinate')
 ylabel('y coordinate')
 legend('Given Data', 'Spline', 'location', 'best');

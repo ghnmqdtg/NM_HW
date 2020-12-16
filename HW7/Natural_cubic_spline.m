@@ -24,16 +24,16 @@ function s = Natural_cubic_spline(X, Y)
     d = (Y(2 : n) - Y(1 : n - 1))./h;
 
     % for natural spline, second derivatives are zero at endpoints
-    % A(1, 1) = 1;
-    % A(n, n) = 1;
+    A(1, 1) = 1;
+    A(n, n) = 1;
 
     % for not-a-knot spline, second derivatives are zero at endpoints
-    A(1, 1) = h(2);
-    A(1, 2) = - (h(1) + h(2));
-    A(1, 3) = h(1);
-    A(n, n - 2) = h(n - 1);
-    A(n, n - 1) = - (h(n - 2) + h(n - 1));
-    A(n, n) = h(1);
+    % A(1, 1) = h(2);
+    % A(1, 2) = - (h(1) + h(2));
+    % A(1, 3) = h(1);
+    % A(n, n - 2) = h(n - 1);
+    % A(n, n - 1) = - (h(n - 2) + h(n - 1));
+    % A(n, n) = h(1);
 
     % set up the equations for the second derivatives, m(i)
     for i = 2 : n - 1
