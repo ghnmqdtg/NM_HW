@@ -1,7 +1,7 @@
 function [yint, c] = Newtint(x, y, xx)
 % Newtint: Newton interpolating polynomial
 %
-% Syntax: yint = Newtint (x,y, xx)
+% Syntax: [yint, c] = Newtint(x,y, xx)
 % 
 % Uses an (n - 1)-order Newton interpolating polynomial based on n data
 % points (x, y) to determine a value of the dependent variable (yint)
