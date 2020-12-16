@@ -1,7 +1,9 @@
 ###### tags: `Assignment`
 # Numerical Method Homework Assignment #6
-I haven't solve the problem of showing Latex on GitHub, you can read this article on my hackmd with the following link:
+I haven't solved the problem of failed to show Latex on GitHub, you can read this article on my hackmd with the following link:
+
 https://hackmd.io/@tweizh0331/NM_HW6
+
 ## Q1. Directional Derivative
 Find the directional derivative of: 
 
