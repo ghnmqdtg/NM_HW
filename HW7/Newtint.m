@@ -1,7 +1,7 @@
-function [yint, c] = Newtint(x, y, xx)
+function yint = Newtint(x, y, xx)
 % Newtint: Newton interpolating polynomial
 %
-% Syntax: [yint, c] = Newtint(x,y, xx)
+% Syntax: yint = Newtint(x,y, xx)
 % 
 % Uses an (n - 1)-order Newton interpolating polynomial based on n data
 % points (x, y) to determine a value of the dependent variable (yint)
@@ -37,10 +37,8 @@ function [yint, c] = Newtint(x, y, xx)
     yint = b(1, 1);
 
     for j = 1: n - 1
-        xt = xt * (xx - x(j));
+        xt = xt.*(xx - x(j));
         yint = yint + b(1, j + 1) * xt;
     end
-
-    c = b(1, :);
 
 end
