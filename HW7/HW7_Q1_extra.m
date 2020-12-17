@@ -52,6 +52,8 @@ vq1 = pchip(X, Y, xx);
 hold on;
 % Plot data points
 plot(X, Y, 'o');
+% Plot the real function
+plot(xx, sin(xx));
 % Plot the estimated line
 plot(x_tmp_0, y_tmp_0);
 plot(x_tmp_1, y_tmp_1);
@@ -65,6 +67,7 @@ ylim([-1.5 1.5])
 xlabel('x coordinate')
 ylabel('y coordinate')
 legend('Given Data',...
+       'Sin(x)',...
        'Natural',...
        'Not-a-knot',...
        'Clamped',...
