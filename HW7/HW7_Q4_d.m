@@ -7,7 +7,9 @@ func = @(x) 1./(1 + 25 * x.^2);
 X = -1: 0.5 :1;
 Y = func(X);
 n = length(X);
-s = Natural_cubic_spline(X, Y);
+
+% 0: natural
+s = cubic_spline(X, Y, 0);
 
 %-------------------- Plot the figure --------------------%
 hold on;
