@@ -23,21 +23,21 @@ d = (Y(2 : n) - Y(1 : n - 1))./h;
 % A(n, n) = 1;
 
 % for not-a-knot spline
-A(1, 1) = h(2);
-A(1, 2) = - (h(1) + h(2));
-A(1, 3) = h(1);
-A(n, n - 2) = h(n - 1);
-A(n, n - 1) = - (h(n - 2) + h(n - 1));
-A(n, n) = h(1);
+% A(1, 1) = h(2);
+% A(1, 2) = - (h(1) + h(2));
+% A(1, 3) = h(1);
+% A(n, n - 2) = h(n - 1);
+% A(n, n - 1) = - (h(n - 2) + h(n - 1));
+% A(n, n) = h(1);
 
 % for clamped spline
-% A(1, 1) = 2 * h(1);
-% A(1, 2) = h(1);
-% A(n, n - 1) = h(n - 1);
-% A(n, n) = 2 * h(n - 1);
-% % derivative end conditions equal to the exact values calculated with differentiation.
-% b(1) = 6 * (d(1) - diff_Y(1));
-% b(n) = 6 * (diff_Y(n - 1) - d(n - 1));
+A(1, 1) = 2 * h(1);
+A(1, 2) = h(1);
+A(n, n - 1) = h(n - 1);
+A(n, n) = 2 * h(n - 1);
+% derivative end conditions equal to the exact values calculated with differentiation.
+b(1) = 6 * (d(1) - diff_Y(1));
+b(n) = 6 * (diff_Y(n - 1) - d(n - 1));
 
 % set up the equations for the second derivatives, m(i)
 for i = 2 : n - 1
@@ -79,10 +79,17 @@ end
 
 plot(x_tmp, y_tmp);
 
+cs = spline(X, [diff_Y(1) Y diff_Y(n-1)]);
+xx = 0: 0.25: 7;
+plot(xx, ppval(cs, xx), '-');
+
 % Config of figure
-title('Not-a-knot Spline');
+title('Clamped Spline');
 xlim([-0.5 7.5])
 ylim([-1.5 1.5])
 xlabel('x coordinate')
 ylabel('y coordinate')
-legend('Given Data', 'Spline', 'location', 'best');
+legend('Given Data',...
+       'Spline(manual)',...
+       'Spline(called function)',...
+       'location', 'best');
