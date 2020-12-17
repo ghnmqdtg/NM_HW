@@ -10,7 +10,7 @@ function s = cubic_spline(X, Y, method)
 % 
 % output:
 %   s = coefficients of splines
-    if method > 2 && method < 0 , error('Invalid Method'); end
+    if method > 2 || method < 0 , error('Invalid Method'); end
     n = length(X);
 
     A = zeros(n);
