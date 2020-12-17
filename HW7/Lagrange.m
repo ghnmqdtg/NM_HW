@@ -25,7 +25,7 @@ function yint = Lagrange(x, y, xx)
         product = y(i);
         for j = 1 : n
             if i ~= j
-                product = product.*(xx - x(j)) / (x(i) - x(j));
+                product = product.*(xx - x(j))./(x(i) - x(j));
             end
         end
         s = s + product;
