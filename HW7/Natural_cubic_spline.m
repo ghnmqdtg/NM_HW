@@ -27,7 +27,7 @@ function s = Natural_cubic_spline(X, Y)
     A(1, 1) = 1;
     A(n, n) = 1;
 
-    % for not-a-knot spline, second derivatives are zero at endpoints
+    % for not-a-knot spline
     % A(1, 1) = h(2);
     % A(1, 2) = - (h(1) + h(2));
     % A(1, 3) = h(1);
