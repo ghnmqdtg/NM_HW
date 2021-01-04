@@ -17,7 +17,7 @@ error_value = abs(estimated - actual) / actual;
 fprintf('Q1-b: Single application of the trapezoidal rule\n');
 fprintf('Estimated Value: %.10f\n', estimated);
 fprintf('Actual Value:    %.10f\n', actual);
-fprintf('Percent Error:   %.2f%%\n', error_value * 100);
+fprintf('Percent Error:   %.5f%%\n', error_value * 100);
 
 % Plot the figure
 hold on;
