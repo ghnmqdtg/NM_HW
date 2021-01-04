@@ -29,19 +29,16 @@ function I = Simpson(func, a, b, rule, n, varargin)
             I = h / 3 * (func(x(1)) + 4 * odd + 2 * even + func(x(end)));
 
         case '3/8'
-        % [1 3 3 1 + 
-        %        1 3 3 1 +
-        %              1 3 3 1 +
-        %                    1 3 3 1 +
-        %                              ...]
-        % [1 3 3 2 3 3 2 3 3 2 3 3 2 ... 3 3 1]
-
-        if rem(n, 3) ~= 0, error('\n Argument n invalid. n should be multiple of 3'), end
-
-        I = 3 / 8 * h * (sum(func(x).*[1 3 3 repmat([2, 3, 3], 1, (n-3)/3), 1]));
+            % [1 3 3 1 + 
+            %        1 3 3 1 +
+            %              1 3 3 1 +
+            %                    1 3 3 1 +
+            %                              ...]
+            % [1 3 3 2 3 3 2 3 3 2 3 3 2 ... 3 3 1]
+            if rem(n, 3) ~= 0, error('\n Argument n invalid. n should be multiple of 3'), end
+            I = 3 / 8 * h * (sum(func(x).*[1 3 3 repmat([2, 3, 3], 1, (n-3)/3), 1]));
         
         otherwise
             error 'Invalid option for RULE'
-    
     end
 end
