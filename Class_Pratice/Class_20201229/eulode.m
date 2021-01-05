@@ -32,5 +32,5 @@ function [t,y] = eulode(dydt, tspan, y0, h)
     y = y0 * ones(n, 1); %preallocate y to improve efficiency
     
     for i = 1: n - 1 %implement Euler's Method
-        y(i + 1) = y(i) + dydt(t(i), y(i)) * (t(i + 1) - t(i));
+        y(i + 1) = y(i) + dydt(y(i), t(i)) * h;
     end
