@@ -7,7 +7,7 @@ dydt = @(t, y) - 100000 * y + 99999 * exp(-t); % dy/dt
 tspan = [0 2];
 h = 0.00001; % Steps, bigger step yields bigger error
 
-y0 = 0;
+y0 = y(tspan(1));
 [t_aprox, y_aprox] = implicit_EulerODE(dydt, tspan, y0, h);
 
 hold on;
