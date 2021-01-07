@@ -3,9 +3,9 @@ close all;
 format long;
 
 y = @(t) exp(-t);
-dydt = @(t, y) - 100000 * y + 99999 * exp(-t); % dy/dt
+dydt = @(t, y) - 100000 * y + 99999 * exp(-t);
 tspan = [0 2];
-h = 0.00001; % Steps, bigger step yields bigger error
+h = 1e-5;
 
 y0 = y(tspan(1));
 [t_aprox, y_aprox] = implicit_EulerODE(dydt, tspan, y0, h);
